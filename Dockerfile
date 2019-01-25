@@ -1,8 +1,6 @@
 FROM alpine:latest
 
-RUN apk add --no-cache py2-pip jq curl \
-  && pip install httpie \
-  && rm -r /root/.cache
+RUN apk add --no-cache jq httpie
 
 ENTRYPOINT [ "http" ]
 CMD [ "--help" ]
